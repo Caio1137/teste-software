@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Livraria N2</title>
+    <link rel="stylesheet" href="/estilo.css">
+    <script src="/app.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="largura cabecalho">
+            <strong>Livraria N2</strong>
+            <button id="sair" class="secundario" type="button" hidden>Sair</button>
+        </div>
+    </header>
+
+    <main class="largura">
+        <section id="acesso" class="cartao login" hidden>
+            <h1>Entrar</h1>
+            <form id="form-login">
+                <label for="login-email">E-mail</label>
+                <input id="login-email" name="email" type="email" autocomplete="username" required>
+                <label for="login-senha">Senha</label>
+                <input id="login-senha" name="senha" type="password" autocomplete="current-password" required>
+                <p id="erro-login" class="erro" role="alert" hidden></p>
+                <button type="submit">Entrar</button>
+            </form>
+        </section>
+
+        <section id="painel" hidden>
+            <nav aria-label="Cadastros">
+                <button type="button" class="aba" data-entidade="livros">Livros</button>
+                <button type="button" class="aba" data-entidade="vendas">Vendas</button>
+                <button type="button" class="aba" data-entidade="usuarios">Usuários</button>
+            </nav>
+            <div class="titulo">
+                <h1 id="titulo"></h1>
+                <button id="novo" type="button"></button>
+            </div>
+            <p id="aviso" role="status" hidden></p>
+            <div class="cartao quadro">
+                <table>
+                    <thead><tr id="colunas"></tr></thead>
+                    <tbody id="registros"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <dialog id="cadastro" aria-labelledby="titulo-form">
+        <form id="form-cadastro">
+            <h2 id="titulo-form"></h2>
+            <div id="campos"></div>
+            <p id="erro-cadastro" class="erro" role="alert" hidden></p>
+            <div class="botoes">
+                <button type="button" class="secundario" id="cancelar">Cancelar</button>
+                <button type="submit">Salvar</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>

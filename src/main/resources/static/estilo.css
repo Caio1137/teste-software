@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: light;
+    font-family: system-ui, sans-serif;
+    color: #23322d;
+    background: #f4f5f0;
+    --verde: #285443;
+    --borda: #dbe2da;
+}
+
+body {
+    margin: 0;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+header {
+    background: var(--verde);
+    color: white;
+}
+
+.largura {
+    width: min(1060px, calc(100% - 32px));
+    margin-inline: auto;
+}
+
+.cabecalho, .titulo, .botoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.cabecalho {
+    min-height: 62px;
+    font-size: 1.1rem;
+}
+
+main {
+    padding-block: 32px;
+}
+
+h1, h2 {
+    margin: 0 0 18px;
+}
+
+.titulo {
+    margin-block: 22px 16px;
+}
+
+.titulo h1 {
+    margin: 0;
+}
+
+.cartao, dialog {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+}
+
+.login {
+    width: min(100%, 390px);
+    margin: 8vh auto 0;
+    padding: 28px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input, select, button {
+    font: inherit;
+    border-radius: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--borda);
+    margin-bottom: 13px;
+}
+
+button {
+    padding: 8px 13px;
+    color: white;
+    background: var(--verde);
+    border: 1px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+button:disabled {
+    opacity: .65;
+    cursor: wait;
+}
+
+button.secundario, .aba {
+    background: white;
+    color: var(--verde);
+    border-color: var(--borda);
+}
+
+.aba[aria-pressed="true"] {
+    color: white;
+    background: var(--verde);
+    border-color: var(--verde);
+}
+
+button:focus-visible, input:focus-visible, select:focus-visible {
+    outline: 2px solid #aa6a29;
+    outline-offset: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 8px;
+}
+
+.quadro {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+th, td {
+    padding: 11px 13px;
+}
+
+thead {
+    background: #eef2ec;
+}
+
+tbody tr + tr {
+    border-top: 1px solid var(--borda);
+}
+
+td.acoes {
+    white-space: nowrap;
+}
+
+td.acoes button {
+    font-size: .88rem;
+    padding: 5px 9px;
+}
+
+td.acoes button + button {
+    margin-left: 8px;
+}
+
+td.acoes .excluir, .erro {
+    color: #a12929;
+}
+
+#aviso {
+    margin: 0 0 12px;
+}
+
+dialog {
+    width: min(440px, calc(100% - 32px));
+    padding: 24px;
+}
+
+dialog::backdrop {
+    background: #18282080;
+}
+
+.botoes {
+    justify-content: flex-end;
+    margin-top: 4px;
+}
